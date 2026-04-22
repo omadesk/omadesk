@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Oluomachi Blessing - AI Automation VA</title>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f8f6f1;--border:#e8e4dc;--accent:#2d6a4f;--accent2:#40916c;--accent3:#1b4332;--alight:#d8f3dc;--text:#1a1a2e;--muted:#6b7280;}
+*{margin:0;padding:0;box-sizing:border-box;}html{scroll-behavior:smooth;}
+body{background:var(--bg);color:var(--text);font-family:'DM Sans',sans-serif;font-weight:300;overflow-x:hidden;}
+nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:18px 40px;display:flex;justify-content:space-between;align-items:center;background:rgba(248,246,241,0.95);backdrop-filter:blur(20px);border-bottom:1px solid var(--border);}
+.logo{font-family:'Syne',sans-serif;font-weight:800;font-size:1.1rem;color:var(--text);text-decoration:none;}.logo span{color:var(--accent);}
+.nav-links{display:flex;gap:28px;list-style:none;align-items:center;}.nav-links a{color:var(--muted);text-decoration:none;font-size:0.875rem;transition:color 0.2s;}.nav-links a:hover{color:var(--text);}
+.btn{background:var(--accent);color:white;padding:9px 20px;border-radius:8px;font-weight:500;text-decoration:none;font-size:0.875rem;}
+.hero{min-height:100vh;display:flex;align-items:center;padding:120px 40px 80px;max-width:1200px;margin:0 auto;}
+.hero-grid{display:grid;grid-template-columns:1fr 380px;gap:70px;align-items:center;width:100%;}
+.badge{display:inline-flex;align-items:center;gap:8px;background:var(--alight);border:1px solid rgba(45,106,79,0.2);padding:6px 14px;border-radius:100px;font-size:0.8rem;color:var(--accent);margin-bottom:24px;font-weight:500;}
+.dot{width:6px;height:6px;background:var(--accent2);border-radius:50%;animation:pulse 2s infinite;}
+@keyframes pulse{0%,100%{opacity:1;transform:scale(1);}50%{opacity:0.5;transform:scale(1.3);}}
+h1{font-family:'Syne',sans-serif;font-size:clamp(2.4rem,4.5vw,3.8rem);font-weight:800;line-height:1.08;letter-spacing:-0.03em;margin-bottom:18px;}
+.green{color:var(--accent);}
+.sub{font-size:1rem;color:var(--muted);line-height:1.75;max-width:480px;margin-bottom:32px;}
+.actions{display:flex;gap:12px;flex-wrap:wrap;}
+.btn-p{background:var(--accent);color:white;padding:13px 24px;border-radius:8px;text-decoration:none;font-weight:500;font-size:0.9rem;box-shadow:0 4px 16px rgba(45,106,79,0.25);transition:background 0.2s,transform 0.2s;}
+.btn-p:hover{background:var(--accent3);transform:translateY(-2px);}
+.btn-s{background:transparent;color:var(--text);padding:13px 24px;border-radius:8px;text-decoration:none;font-weight:500;font-size:0.9rem;border:1.5px solid var(--border);transition:border-color 0.2s,background 0.2s;}
+.btn-s:hover{border-color:var(--accent);background:var(--alight);}
+.img-wrap{position:relative;}
+.img-wrap::before{content:'';position:absolute;top:16px;left:16px;right:-16px;bottom:-16px;background:var(--alight);border-radius:18px;z-index:0;}
+.hero-img{position:relative;z-index:1;width:100%;height:500px;object-fit:cover;object-position:top center;border-radius:14px;box-shadow:0 16px 50px rgba(0,0,0,0.12);}
+.tag{position:absolute;bottom:-14px;left:-14px;z-index:2;background:white;border:1px solid var(--border);border-radius:12px;padding:10px 16px;box-shadow:0 8px 24px rgba(0,0,0,0.1);display:flex;align-items:center;gap:10px;font-size:0.82rem;font-weight:500;}
+.tag-icon{width:34px;height:34px;background:var(--alight);border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:1rem;}
+.strip{padding:18px 40px;border-top:1px solid var(--border);border-bottom:1px solid var(--border);background:white;}
+.strip-inner{max-width:1200px;margin:0 auto;display:flex;align-items:center;gap:28px;flex-wrap:wrap;}
+.strip-label{font-size:0.7rem;text-transform:uppercase;letter-spacing:0.12em;color:var(--muted);white-space:nowrap;font-weight:500;}
+.tags{display:flex;gap:8px;flex-wrap:wrap;}
+.tag2{background:var(--bg);border:1px solid var(--border);padding:4px 12px;border-radius:100px;font-size:0.78rem;color:var(--text);font-weight:500;}
+section{padding:80px 40px;}
+.inner{max-width:1200px;margin:0 auto;}
+.slabel{font-size:0.7rem;text-transform:uppercase;letter-spacing:0.12em;color:var(--accent);margin-bottom:10px;font-weight:600;}
+h2{font-family:'Syne',sans-serif;font-size:clamp(1.6rem,2.8vw,2.4rem);font-weight:700;letter-spacing:-0.02em;margin-bottom:10px;line-height:1.15;}
+.sdesc{color:var(--muted);font-size:0.95rem;line-height:1.7;max-width:500px;margin-bottom:48px;}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:14px;margin-bottom:56px;}
+.stat{background:white;border:1px solid var(--border);border-radius:12px;padding:22px;text-align:center;transition:border-color 0.2s;}
+.stat:hover{border-color:var(--accent2);}
+.snum{font-family:'Syne',sans-serif;font-size:2.2rem;font-weight:800;color:var(--accent);letter-spacing:-0.03em;margin-bottom:4px;}
+.slbl{color:var(--muted);font-size:0.8rem;font-weight:500;}
+.pgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(440px,1fr));gap:20px;}
+.card{background:white;border:1.5px solid var(--border);border-radius:16px;padding:28px;transition:border-color 0.3s,transform 0.3s,box-shadow 0.3s;position:relative;overflow:hidden;}
+.card::after{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--accent),var(--accent2));opacity:0;transition:opacity 0.3s;}
+.card:hover{border-color:var(--accent2);transform:translateY(-3px);box-shadow:0 10px 32px rgba(45,106,79,0.1);}
+.card:hover::after{opacity:1;}
+.ch{display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:16px;}
+.ci{width:44px;height:44px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:1.3rem;flex-shrink:0;}
+.ig{background:#d8f3dc;}.ib{background:#dbeafe;}.io{background:#fef3c7;}.ip{background:#ede9fe;}
+.cp{font-size:0.7rem;padding:3px 9px;border-radius:100px;font-weight:600;border:1px solid;letter-spacing:0.02em;}
+.pz{color:#c2410c;border-color:rgba(194,65,12,0.25);background:#fff7ed;}
+.pm{color:#2d6a4f;border-color:rgba(45,106,79,0.25);background:#d8f3dc;}
+.pa{color:#1d4ed8;border-color:rgba(29,78,216,0.25);background:#dbeafe;}
+.ct{font-family:'Syne',sans-serif;font-size:1.05rem;font-weight:700;margin-bottom:8px;}
+.cd{color:var(--muted);font-size:0.85rem;line-height:1.6;margin-bottom:14px;}
+.flow{display:flex;align-items:center;gap:6px;flex-wrap:wrap;margin-bottom:14px;}
+.fs{background:var(--bg);border:1px solid var(--border);padding:3px 9px;border-radius:5px;font-size:0.73rem;font-weight:500;}
+.fa{color:var(--muted);font-size:0.65rem;}
+.cs{display:flex;align-items:center;gap:5px;font-size:0.75rem;color:var(--accent);font-weight:600;margin-bottom:16px;}
+.sd{width:6px;height:6px;background:var(--accent2);border-radius:50%;animation:pulse 2s infinite;}
+.ss{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:14px;}
+.ss img{width:100%;height:90px;object-fit:cover;border-radius:8px;border:1px solid var(--border);cursor:pointer;transition:transform 0.2s;}
+.ss img:hover{transform:scale(1.03);}
+.sg{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:14px;}
+.sc{background:white;border:1.5px solid var(--border);border-radius:12px;padding:24px;transition:border-color 0.2s,box-shadow 0.2s;}
+.sc:hover{border-color:var(--accent2);box-shadow:0 6px 20px rgba(45,106,79,0.08);}
+.si{font-size:1.7rem;margin-bottom:12px;}
+.st{font-family:'Syne',sans-serif;font-weight:700;font-size:0.95rem;margin-bottom:7px;}
+.sd2{color:var(--muted);font-size:0.83rem;line-height:1.6;}
+.cta-s{background:white;border-top:1px solid var(--border);}
+.cta-b{background:linear-gradient(135deg,#d8f3dc,#b7e4c7);border:1.5px solid rgba(45,106,79,0.2);border-radius:18px;padding:56px;text-align:center;}
+.cta-b h2{margin-bottom:12px;}
+.cta-b p{color:#374151;font-size:0.95rem;line-height:1.7;max-width:460px;margin:0 auto 28px;}
+footer{padding:32px 40px;border-top:1px solid var(--border);background:white;}
+.fi{max-width:1200px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:14px;}
+.fn{font-family:'Syne',sans-serif;font-weight:700;font-size:0.88rem;}
+.fl{display:flex;gap:20px;list-style:none;}.fl a{color:var(--muted);text-decoration:none;font-size:0.83rem;transition:color 0.2s;}.fl a:hover{color:var(--accent);}
+.fc{color:var(--muted);font-size:0.76rem;}
+.fu{opacity:0;transform:translateY(20px);transition:opacity 0.6s ease,transform 0.6s ease;}
+.fu.visible{opacity:1;transform:translateY(0);}
+.lb{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.88);z-index:1000;align-items:center;justify-content:center;}
+.lb.active{display:flex;}
+.lb img{max-width:90vw;max-height:90vh;border-radius:8px;}
+.lx{position:absolute;top:20px;right:30px;color:white;font-size:2rem;cursor:pointer;}
+.pg{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:12px;}
+.pg img{width:100%;height:180px;object-fit:cover;border-radius:10px;border:1px solid var(--border);cursor:pointer;transition:transform 0.2s;}
+.pg img:hover{transform:scale(1.02);}
+@media(max-width:768px){.hero-grid{grid-template-columns:1fr;}.img-wrap{display:none;}nav{padding:14px 20px;}section{padding:56px 20px;}.pgrid{grid-template-columns:1fr;}.cta-b{padding:36px 20px;}.ss{grid-template-columns:1fr;}}
+</style>
+</head>
+<body>
+
+<div class="lb" id="lb" onclick="closeLb()">
+  <span class="lx">&#x2715;</span>
+  <img id="lb-img" src="" alt="">
+</div>
+
+<nav>
+  <a href="#" class="logo">Oma<span>desk</span></a>
+  <ul class="nav-links">
+    <li><a href="#portfolio">Work</a></li>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#contact" class="btn">Book a Call</a></li>
+  </ul>
+</nav>
+
+<div style="background:var(--bg)">
+<div class="hero">
+<div class="hero-grid">
+<div>
+  <div class="badge"><span class="dot"></span>Available for new clients</div>
+  <h1>I build systems<br>that work <span class="green">while<br>you don't.</span></h1>
+  <p class="sub">AI Automation VA helping businesses eliminate repetitive tasks through smart workflow automation — so you can focus on what actually grows your business.</p>
+  <div class="actions">
+    <a href="https://tally.so/r/xXNNBE" target="_blank" class="btn-p">Book a Free Consultation</a>
+    <a href="#portfolio" class="btn-s">See My Work &#x2193;</a>
+  </div>
+</div>
+<div class="img-wrap">
+  <img src="photo.jpg" alt="Oluomachi Blessing" class="hero-img">
+  <div class="tag">
+    <div class="tag-icon">&#x26A1;</div>
+    <div>
+      <div style="font-weight:600;font-size:0.8rem;">AI Automation VA</div>
+      <div style="color:var(--muted);font-size:0.73rem;">Zapier &middot; Make.com &middot; Apps Script</div>
+    </div>
+  </div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="strip">
+<div class="strip-inner">
+  <span class="strip-label">Tools I work with</span>
+  <div class="tags">
+    <span class="tag2">Zapier</span>
+    <span class="tag2">Make.com</span>
+    <span class="tag2">Google Apps Script</span>
+    <span class="tag2">Google Workspace</span>
+    <span class="tag2">Tally</span>
+    <span class="tag2">Trello</span>
+    <span class="tag2">Canva</span>
+  </div>
+</div>
+</div>
+
+<section id="portfolio">
+<div class="inner">
+  <p class="slabel">Portfolio</p>
+  <h2>Automations I've Built</h2>
+  <p class="sdesc">Real systems built from scratch. Each one is fully live and solving a real business problem.</p>
+
+  <div class="stats fu">
+    <div class="stat"><div class="snum">4</div><div class="slbl">Live Automations</div></div>
+    <div class="stat"><div class="snum">3</div><div class="slbl">Platforms Mastered</div></div>
+    <div class="stat"><div class="snum">10+</div><div class="slbl">Hours Saved Weekly</div></div>
+    <div class="stat"><div class="snum">50+</div><div class="slbl">Contacts Managed</div></div>
+  </div>
+
+  <div class="pgrid">
+
+    <div class="card fu">
+      <div class="ch"><div class="ci io">&#x1F4E7;</div><span class="cp pz">Zapier</span></div>
+      <div class="ct">Email Attachment Auto-Saver</div>
+      <p class="cd">Every email attachment received in Gmail is automatically saved to an organised Google Drive folder — zero manual downloading, nothing ever lost.</p>
+      <div class="flow"><span class="fs">Gmail</span><span class="fa">&#x2192;</span><span class="fs">Google Drive</span></div>
+      <div class="cs"><span class="sd"></span>Live &amp; Running</div>
+      <div class="ss">
+        <img src="zapier1.png" alt="Zapier Gmail Drive" onclick="openLb(this.src)">
+        <img src="zapier4.png" alt="Drive config" onclick="openLb(this.src)">
+      </div>
+    </div>
+
+    <div class="card fu">
+      <div class="ch"><div class="ci ib">&#x1F4C5;</div><span class="cp pz">Zapier</span></div>
+      <div class="ct">Calendar to Task Manager</div>
+      <p class="cd">Whenever a new Google Calendar event is created, a corresponding Trello task card is automatically generated — keeping tasks and schedule perfectly in sync.</p>
+      <div class="flow"><span class="fs">Google Calendar</span><span class="fa">&#x2192;</span><span class="fs">Trello</span></div>
+      <div class="cs"><span class="sd"></span>Live &amp; Running</div>
+      <div class="ss">
+        <img src="zapier2.png" alt="Calendar Trello" onclick="openLb(this.src)">
+        <img src="zapier3.png" alt="Trello board" onclick="openLb(this.src)">
+      </div>
+    </div>
+
+    <div class="card fu">
+      <div class="ch"><div class="ci ig">&#x1F5D3;&#xFE0F;</div><span class="cp pm">Make.com</span></div>
+      <div class="ct">Consultation Booking System</div>
+      <p class="cd">A client fills a booking form &#x2192; a Google Calendar event is instantly created for both parties &#x2192; a personalised confirmation email sent automatically. No back-and-forth.</p>
+      <div class="flow"><span class="fs">Tally Form</span><span class="fa">&#x2192;</span><span class="fs">Google Calendar</span><span class="fa">&#x2192;</span><span class="fs">Gmail</span></div>
+      <div class="cs"><span class="sd"></span>Live &amp; Running</div>
+      <div class="ss">
+        <img src="make3.png" alt="Make canvas" onclick="openLb(this.src)">
+        <img src="make2.png" alt="Make history" onclick="openLb(this.src)">
+        <img src="tally1.png" alt="Tally form" onclick="openLb(this.src)">
+        <img src="make5.png" alt="Make instant" onclick="openLb(this.src)">
+      </div>
+    </div>
+
+    <div class="card fu">
+      <div class="ch"><div class="ci ip">&#x1F916;</div><span class="cp pa">Apps Script</span></div>
+      <div class="ct">Smart CRM + Follow-up System</div>
+      <p class="cd">A fully automated CRM in Google Sheets. Every morning it scans 50+ contacts, sends personalised follow-up emails to overdue leads, updates dates automatically, and generates a weekly pipeline report in Google Docs.</p>
+      <div class="flow"><span class="fs">Google Sheets</span><span class="fa">&#x2192;</span><span class="fs">Gmail</span><span class="fa">&#x2192;</span><span class="fs">Google Docs</span></div>
+      <div class="cs"><span class="sd"></span>Live &amp; Running</div>
+      <div class="ss">
+        <img src="crm1.png" alt="CRM Sheet" onclick="openLb(this.src)">
+        <img src="script1.png" alt="Emails sent" onclick="openLb(this.src)">
+        <img src="email4.png" alt="Checking In" onclick="openLb(this.src)">
+        <img src="email5.png" alt="All Mail" onclick="openLb(this.src)">
+      </div>
+    </div>
+
+  </div>
+
+  <div style="margin-top:56px">
+    <p class="slabel">Proof It Works</p>
+    <h2>Real Results, Real Emails</h2>
+    <p class="sdesc" style="margin-bottom:24px">Screenshots from live systems. Click any image to zoom in.</p>
+    <div class="pg">
+      <img src="email1.png" alt="CRM emails inbox" onclick="openLb(this.src)">
+      <img src="email2.png" alt="Follow-up email" onclick="openLb(this.src)">
+      <img src="email3.png" alt="Overdue contacts" onclick="openLb(this.src)">
+      <img src="script2.png" alt="Triggers page" onclick="openLb(this.src)">
+      <img src="script3.png" alt="Executions page" onclick="openLb(this.src)">
+      <img src="make4.png" alt="Make history" onclick="openLb(this.src)">
+    </div>
+  </div>
+</div>
+</section>
+
+<section id="services" style="background:white;border-top:1px solid var(--border)">
+<div class="inner">
+  <p class="slabel">Services</p>
+  <h2>What I Can Build For You</h2>
+  <p class="sdesc">Custom automation systems tailored to your business. You describe the problem — I build the solution.</p>
+  <div class="sg">
+    <div class="sc fu"><div class="si">&#x26A1;</div><div class="st">Workflow Automation</div><p class="sd2">Connect your apps and eliminate manual tasks. Lead capture, file management, notifications — all automated.</p></div>
+    <div class="sc fu"><div class="si">&#x1F4CB;</div><div class="st">CRM Systems</div><p class="sd2">Custom CRM in Google Sheets with automatic follow-ups, status tracking, and weekly reports.</p></div>
+    <div class="sc fu"><div class="si">&#x1F5D3;&#xFE0F;</div><div class="st">Booking Systems</div><p class="sd2">End-to-end appointment booking with automatic calendar invites and confirmation emails for both parties.</p></div>
+    <div class="sc fu"><div class="si">&#x1F4CA;</div><div class="st">Data &amp; Reporting</div><p class="sd2">Automatic data collection from emails, forms, or spreadsheets compiled into clean weekly reports.</p></div>
+    <div class="sc fu"><div class="si">&#x1F4E7;</div><div class="st">Email Automation</div><p class="sd2">Personalised email sequences, follow-up systems, and inbox organisation running automatically.</p></div>
+    <div class="sc fu"><div class="si">&#x1F527;</div><div class="st">Custom Scripts</div><p class="sd2">Bespoke Google Apps Script solutions for unique business needs that standard tools cannot solve.</p></div>
+  </div>
+</div>
+</section>
+
+<section id="contact" class="cta-s">
+<div class="inner">
+  <div class="cta-b fu">
+    <p class="slabel" style="margin-bottom:10px">Let's Work Together</p>
+    <h2>Ready to automate your business?</h2>
+    <p>Book a free 15-minute consultation. Tell me what's taking too long — I'll tell you exactly how to automate it.</p>
+    <a href="https://tally.so/r/xXNNBE" target="_blank" class="btn-p">Book Your Free Consultation</a>
+    <p style="margin-top:14px;font-size:0.83rem;color:#374151">Or email me: <a href="mailto:omadesk.creative@gmail.com" style="color:var(--accent);font-weight:500">omadesk.creative@gmail.com</a></p>
+  </div>
+</div>
+</section>
+
+<footer>
+<div class="fi">
+  <div class="fn">Oluomachi Blessing &mdash; OmaDesk Creative Studio</div>
+  <ul class="fl">
+    <li><a href="https://www.linkedin.com/in/ekwo-oluomachi-blessing" target="_blank">LinkedIn</a></li>
+    <li><a href="mailto:omadesk.creative@gmail.com">Email</a></li>
+    <li><a href="https://tally.so/r/xXNNBE" target="_blank">Book a Call</a></li>
+  </ul>
+  <span class="fc">&copy; 2026 OmaDesk Creative Studio</span>
+</div>
+</footer>
+
+<script>
+const obs = new IntersectionObserver(entries => {
+  entries.forEach(e => { if(e.isIntersecting) e.target.classList.add('visible'); });
+}, {threshold:0.1});
+document.querySelectorAll('.fu').forEach(el => obs.observe(el));
+
+function openLb(src){ document.getElementById('lb-img').src=src; document.getElementById('lb').classList.add('active'); }
+function closeLb(){ document.getElementById('lb').classList.remove('active'); }
+document.addEventListener('keydown', e => { if(e.key==='Escape') closeLb(); });
+</script>
+</body>
+</html>
